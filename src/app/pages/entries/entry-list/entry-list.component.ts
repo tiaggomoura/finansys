@@ -17,7 +17,9 @@ export class EntryListComponent implements OnInit {
   }
 
   private getAllEntries() {
-    this.entryService.getAll().subscribe(entries => this.entries = entries, error => alert('Erro ao carregar lista.'));
+    this.entryService.getAll().subscribe(
+      entries => this.entries = entries.sort((a,b) => b.id - a.id), 
+      error => alert('Erro ao carregar lista.'));
   }
 
   deleteEntry(entry) {
