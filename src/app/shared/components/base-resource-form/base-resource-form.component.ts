@@ -1,16 +1,13 @@
-import { BaseResourceService } from 'src/app/shared/services/base-resource.service';
-import { OnInit, AfterContentChecked, Injector } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AfterContentChecked, Injector, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-
-
-
 import { switchMap } from 'rxjs/operators';
-
+import { BaseResourceService } from 'src/app/shared/services/base-resource.service';
 import toastr from 'toastr';
 import { BaseResourceModel } from '../../models/base-resource.model';
 
-export abstract class BaseresourceFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
+
+export abstract class BaseResourceFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
 
   currentAction: string;
   resourceForm: FormGroup;
