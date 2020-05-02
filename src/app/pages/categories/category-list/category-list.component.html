@@ -3,7 +3,7 @@
     <li class="breadcrumb-item">
       <a routerLink="/">Home</a>
     </li>
-    
+
     <li class="breadcrumb-item active">
       Categorias
     </li>
@@ -27,17 +27,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let cat of categories">
+    <tr *ngFor="let cat of resources">
       <td>
         <strong>{{cat.name}}</strong><br>
         <small>{{cat.description}}</small>
       </td>
       <td>
         <a [routerLink]="[cat.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <button (click)="deleteCategory(cat)" class="btn btn-outline-danger btn-sm">Excluir</button>
+        <button (click)="deleteResource(cat)" class="btn btn-outline-danger btn-sm">Excluir</button>
       </td>
-    </tr>    
-    
+    </tr>
+
   </tbody>
 
 </table>
