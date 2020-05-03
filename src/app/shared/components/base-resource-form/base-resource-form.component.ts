@@ -11,7 +11,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
 
   currentAction: string;
   resourceForm: FormGroup;
-  pageTile: string;
+  pageTitle: string;
   serverErrorMessasges: string[] = null;
   submittingForm: boolean = false;
 
@@ -89,9 +89,9 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
 
   protected setPageTitle() {
     if (this.currentAction == 'new') {
-      this.pageTile = this.creationPageTitle();
+      this.pageTitle = this.creationPageTitle();
     } else {
-      this.pageTile = this.edtionPageTitle();
+      this.pageTitle = this.edtionPageTitle();
     }
   }
 
