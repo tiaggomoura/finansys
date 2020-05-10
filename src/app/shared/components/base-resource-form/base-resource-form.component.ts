@@ -12,7 +12,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   currentAction: string;
   resourceForm: FormGroup;
   pageTitle: string;
-  serverErrorMessasges: string[] = null;
+  serverErrorMessages: string[] = null;
   submittingForm: boolean = false;
 
   protected route: ActivatedRoute;
@@ -62,10 +62,10 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForError(error): void {
-    toastr.error("Ocorreu um erro em sua solicitação.");
+    toastr.error('Ocorreu um erro em sua solicitação.');
     this.submittingForm = false;
-    if (error.status == 422) {
-      this.serverErrorMessasges = ["Falha na comunicação com o servidor. Por favor, tente novamente."]
+    if (error.status == 404) {
+      this.serverErrorMessages = ['Falha na comunicação com o servidor. Por favor, tente novamente.'];
     }
   }
 
